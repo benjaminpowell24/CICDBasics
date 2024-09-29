@@ -20,6 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Pull and Build docker Mongo Image
+        run: docker pull mongo
+
+      - name: Run Mongo Container
+        run: docker container --name mydatabase -p 27017:27017 -d mongo
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
