@@ -18,7 +18,7 @@ describe('User Access test suite', () => {
   })
 
   it('should insert user', async () => {
-    const userId = await sut.addUser(User)
+    userId = await sut.addUser(User)
     expect(userId).toBeTruthy()
   })
 
